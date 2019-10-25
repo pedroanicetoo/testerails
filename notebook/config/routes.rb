@@ -1,7 +1,8 @@
 Notebook::Application.routes.draw do
-  get "home/index"
 
   root :to => 'home#index'
+
+  get "/bemvindo" => 'home#index'
 
   resources :phones
 
@@ -9,10 +10,10 @@ Notebook::Application.routes.draw do
   resources :addresses
 
 
-  resources :contacts
+  resources :contacts # , except: [:edit]
 
 
-  resources :kinds
+  resources :kinds # cria 8 rotas de forma automatica
 
 
   # The priority is based upon order of creation:
