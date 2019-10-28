@@ -20,8 +20,8 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :kind %><br />
-    <%= collection_select(:contact, :kind, @kind_options_for_select, :id, :description) %>
+    <%= f.label :kind_id %><br />
+    <%= collection_select(:contact, :kind_id, @kind_options_for_select, :id, :description) %>
   </div>
 
   <%= f.fields_for :address do |address_fields| %>
