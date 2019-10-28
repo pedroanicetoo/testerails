@@ -4,10 +4,9 @@ class CreateAddresses < ActiveRecord::Migration
       t.string :street
       t.string :city
       t.string :state
-      t.references :contact
+      t.references :contact, index: true, foreign_key: true
 
-      t.timestamps
+      t.timestamps null: false
     end
-    add_index :addresses, :contact_id
   end
 end

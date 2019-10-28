@@ -2,7 +2,7 @@ class KindsController < ApplicationController
   # GET /kinds
   # GET /kinds.json
   def index
-    @kinds = Kind.all
+    @kinds = Kind.all #  SELECT "kinds".* FROM "kinds"
     @meu_nome = "Bora tentar apender algo seu inútil"
     respond_to do |format|
       format.html # index.html.erb

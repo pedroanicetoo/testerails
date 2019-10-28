@@ -30,3 +30,4 @@ test:uncommitted
 time:zones:all
 tmp:clear
 tmp:create
+utils:seed

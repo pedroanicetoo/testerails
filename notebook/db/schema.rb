@@ -22,8 +22,6 @@ ActiveRecord::Schema.define(:version => 20191025054534) do
     t.datetime "updated_at", :null => false
   end
 
-  add_index "addresses", ["contact_id"], :name => "index_addresses_on_contact_id"
-
   create_table "contacts", :force => true do |t|
     t.string   "name"
     t.string   "email"
@@ -32,8 +30,6 @@ ActiveRecord::Schema.define(:version => 20191025054534) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  add_index "contacts", ["kind_id"], :name => "index_contacts_on_kind_id"
 
   create_table "kinds", :force => true do |t|
     t.string   "description"
@@ -47,7 +43,5 @@ ActiveRecord::Schema.define(:version => 20191025054534) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  add_index "phones", ["contact_id"], :name => "index_phones_on_contact_id"
 
 end

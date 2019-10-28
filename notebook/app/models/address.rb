@@ -1,4 +1,4 @@
 class Address < ActiveRecord::Base
   belongs_to :contact
-  attr_accessible :city, :state, :street
+  attr_accessible :city, :state, :street, :contact
 end

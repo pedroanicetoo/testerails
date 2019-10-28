@@ -3,6 +3,7 @@ class ContactsController < ApplicationController
   # GET /contacts.json
   def index
     @contacts = Contact.all
+    @meu_nome = "pedro lixo"
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @contacts }
@@ -24,7 +25,8 @@ class ContactsController < ApplicationController
   # GET /contacts/new.json
   def new
     @contact = Contact.new
-
+    @contact.build_address
+    options_for_selected
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @contact }
@@ -34,6 +36,7 @@ class ContactsController < ApplicationController
   # GET /contacts/1/edit
   def edit
     @contact = Contact.find(params[:id])
+    options_for_selected
   end
 
   # POST /contacts
@@ -79,4 +82,8 @@ class ContactsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  private
+    def options_for_selected
+      @kind_options_for_select = Kind.all
+    end
 end
