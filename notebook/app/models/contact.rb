@@ -6,4 +6,5 @@ class Contact < ActiveRecord::Base
   attr_accessible :email, :name, :rmk, :kind, :kind_id, :address_attributes, :phones_attributes
 
   accepts_nested_attributes_for :address
+  accepts_nested_attributes_for :phones, reject_if: :all_blank, allow_destroy: true
 end

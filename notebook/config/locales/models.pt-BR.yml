@@ -8,6 +8,9 @@
       address:
         one: Endereço
         other: Endereços
+      phone:
+        one: Telefone
+        other: Telefones
     attributes:
       contact:
         name: "Nome"
@@ -21,5 +24,7 @@
         state: "Estado"
         contact_id: "Contato"
         contact: "Contato"
+      phone:
+        phone: "Telefone"
 
       # will translate User attribute "login" as "Handle"
