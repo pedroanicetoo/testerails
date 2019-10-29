@@ -1,10 +1,12 @@
-<h1>Seja Bem vindo <%= mostrar_meu_nome  %> Lixo </h1>
-  <h2>  <%= t('hello.friend') %> </h2>
-  <h2>  <%= l(Date.today) %> </h2>
-  <%= somar_dois(10) %>
-<ul>
-  <li> <%= link_to "Tipos", kinds_path %> </li>
-  <li> <%= link_to "Contatos", contacts_path %> </li>
-  <li> <%= link_to "Endereços", addresses_path %> </li>
-  <li> <%= link_to "Telefones", phones_path %> </li>
-</ul>
+<div class="basic-grey">
+  <h1>Seja Bem vindo <%= mostrar_meu_nome  %> Lixo </h1>
+
+  <!-- <%= somar_dois(10) %> - exemplo de função usanda em 'application.helper' -->
+
+  <ul>
+    <li> <%= link_to "Tipos", kinds_path %> </li>
+    <li> <%= link_to "Contatos", contacts_path %> </li>
+    <li> <%= link_to "Endereços", addresses_path %> </li>
+    <li> <%= link_to "Telefones", phones_path %> </li>
+  </ul>
+</div>

@@ -1,26 +1,28 @@
-<%- model_class = Contact -%>
-<h1><%= "#{t('messages.listing')} #{model_class.model_name.human(count:2)}" %></h1>
+<div class="basic-grey">
+  <%- model_class = Contact -%>
+  <h1 style="padding:0 0 10px 10px;"><%= "#{t('messages.listing')} #{model_class.model_name.human(count:2)}" %></h1>
 
-<table>
-  <tr>
-    <th><%= model_class.human_attribute_name("name") %></th>
-    <th><%= model_class.human_attribute_name("email") %></th>
-    <th><%= model_class.human_attribute_name("kind") %></th>
-    <th><%= model_class.human_attribute_name("rmk") %></th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <table style="width: 100%">
+    <tr>
+      <th style="text-align:left"><%= model_class.human_attribute_name("name") %></th>
+      <th style="text-align:left"><%= model_class.human_attribute_name("kind") %></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
 
-<% @contacts.each do |contact| %>
-  <tr>
-    <td><%= contact.name %></td>
-    <td><%= contact.email %></td>
-    <td><%= contact.kind.description %></td>
-    <td><%= link_to t('buttons.show'), contact %></td>
-    <td><%= link_to t('buttons.edit'), edit_contact_path(contact) %></td>
-    <td><%= link_to t('buttons.destroy'), contact, method: :delete, data: { confirm: t('messages.confirm') } %></td>
-  </tr>
-<% end %>
-</table>
-<%= link_to "#{t('buttons.new')} #{model_class.model_name.human(count:1)}", new_contact_path %>
+  <% @contacts.each do |contact| %>
+    <tr style="background: <%= cycle('#fff', '#ccc') %>; color: #000; text-shadow: none; font-weight: bold">
+      <td><%= contact.name %></td>
+      <td><%= contact.kind.description %></td>
+      <td><%= link_to t('buttons.show'), contact %></td>
+      <td><%= link_to t('buttons.edit'), edit_contact_path(contact) %></td>
+      <td><%= link_to t('buttons.destroy'), contact, method: :delete, data: { confirm: t('messages.confirm') } %></td>
+    </tr>
+  <% end %>
+  </table>
+  <%= link_to "#{t('buttons.new')} #{model_class.model_name.human(count:1)}", new_contact_path %>
+  <div style="width:100%;text-align:center">
+    <%= will_paginate (@contacts), :page_links => true, :previous_label => 'Anterior', :next_label => 'Próximo' %>
+  </div>
+</div>
