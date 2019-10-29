@@ -1,3 +1,4 @@
 class Kind < ActiveRecord::Base
-  attr_accessible :description
+  has_many :contacts
+  attr_accessible :description, :contacts_id, :contacts
 end

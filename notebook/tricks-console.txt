@@ -1,2 +1,14 @@
 <Controller>.helpers.<helper> ##testar os helpers direto no Rails Console
 puts ApplicationController.helpers.link_to "teste", "/teste"
+
+#Criar Contato a partir de um tipo
+amigo = Kind.first
+amigo.contacts.create(name: "jack", email: "jack@jack", obs: "obs...")
+
+#Criar um Contato e atribuir um tipo
+c = Contact.create(name:"abc", email:"@@", rmk: "sjiajf")
+c.kind = Kind.first ##primeiro tipo
+
+#Criar um tipo de Contato de atribuir outros Contatos a esse tipo
+b = Kind.create(description:"tipo pedro")
+b.contacts << Contact.first
