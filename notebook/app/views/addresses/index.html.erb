@@ -1,29 +1,35 @@
-<h1>Listing addresses</h1>
+<div class="basic-grey">
+  <%- model_class = Address -%>
+  <h1 style="padding:0 0 10px 10px;"><%= "#{t('messages.listing')} #{model_class.model_name.human(count:2)}" %></h1>
 
-<table>
-  <tr>
-    <th>Street</th>
-    <th>City</th>
-    <th>State</th>
-    <th>Contact</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <table>
+    <tr>
+      <th style="text-align:left"><%= model_class.human_attribute_name("street") %></th>
+      <th style="text-align:left"><%= model_class.human_attribute_name("city") %></th>
+      <th style="text-align:left"><%= model_class.human_attribute_name("state") %></th>
+      <th style="text-align:left"><%= model_class.human_attribute_name("contact") %></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
 
-<% @addresses.each do |address| %>
-  <tr>
-    <td><%= address.street %></td>
-    <td><%= address.city %></td>
-    <td><%= address.state %></td>
-    <td><%= address.contact %></td>
-    <td><%= link_to 'Show', address %></td>
-    <td><%= link_to 'Edit', edit_address_path(address) %></td>
-    <td><%= link_to 'Destroy', address, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+  <% @addresses.each do |address| %>
+    <tr style="background: <%= cycle('#fff', '#ccc') %>; color: #000; text-shadow: none; font-weight: bold">
+      <td><%= address.street %></td>
+      <td><%= address.city %></td>
+      <td><%= address.state %></td>
+      <td><%= address.contact.name %></td>
+      <td><%= link_to 'Show', address %></td>
+      <td><%= link_to 'Edit', edit_address_path(address) %></td>
+      <td><%= link_to 'Destroy', address, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </table>
 
-<br />
-
-<%= link_to 'New Address', new_address_path %>
+  <br>
+  <%= link_to 'New Address', new_address_path %>
+  <br>
+  <div style="width:100%;text-align:center">
+    <%= will_paginate (@addresses), :page_links => true, :previous_label => t('views.pagination.previous'), :next_label => t('views.pagination.next'), :inner_window => 1, :outer_window => 0 %>
+  </div>
+</div>

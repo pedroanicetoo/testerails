@@ -2,8 +2,7 @@ class AddressesController < ApplicationController
   # GET /addresses
   # GET /addresses.json
   def index
-    @addresses = Address.all
-
+    @addresses = Address.paginate(page: params[:page], per_page: 10)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @addresses }
@@ -25,7 +24,7 @@ class AddressesController < ApplicationController
   # GET /addresses/new.json
   def new
     @address = Address.new
-
+    @address.build_contact
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @address }

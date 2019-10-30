@@ -26,7 +26,7 @@ class ContactsController < ApplicationController
   # GET /contacts/new.json
   def new
     @contact = Contact.new
-    @contact.build_address
+    @contact.build_address ##importante rodar as tasks novamente se os contatos não estiverem com endereços 'criados'
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @contact }
