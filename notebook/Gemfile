@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
+#Bundler-like DSL + rake tasks for Bower on Rails   --- > install bower -g
+gem "bower-rails", "~> 0.11.0"
 #Pagination library for Rails, Sinatra, Merb, DataMapper, and more http://github.com/mislav/will_paginat…
 gem 'will_paginate', '~> 3.1.0'
 #Dynamic nested forms using jQuery made easy; works with formtastic, simple_form or default forms http://github.com/nathanvda/cocoon

@@ -11,6 +11,7 @@ end
 
 module Notebook
   class Application < Rails::Application
+    require Rails.root.join("config/initializers/bower_rails.rb").to_s
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -65,19 +66,6 @@ module Notebook
     # Rails.application.config.assets.paths << Emoji.images_path
 
     # Precompile additional assets.
-    # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-    # Rails.application.config.assets.precompile += %w( search.js )
-    config.assets.precompile += ['alert.js']
-    config.assets.precompile +=['addressess.js']
-    config.assets.precompile +=['contacts.js']
-    config.assets.precompile +=['home.js']
-    config.assets.precompile +=['kinds.js']
-    config.assets.precompile +=['phones.js']
-    config.assets.precompile +=['addressess.css']
-    config.assets.precompile +=['contacts.css']
-    config.assets.precompile +=['home.css']
-    config.assets.precompile +=['kinds.css']
-    config.assets.precompile +=['phones.css']
 
   end
 end
