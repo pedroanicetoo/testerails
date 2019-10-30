@@ -26,7 +26,7 @@
     display: block;
     margin: 0px;
 }
-.basic-grey label>span {
+.basic-grey label>span,  {
     float: left;
     width: 20%;
     text-align: right;
@@ -34,6 +34,19 @@
     margin-top: 10px;
     color: #888;
 }
+.basic-grey .field_with_errors label span  {
+  float: left;
+  width: 20%;
+  text-align: right;
+  padding-right: 10px;
+  margin-top: 10px;
+  color: #888;
+}
+.basic-grey .field_with_errors  input {
+  width: 100% !important;
+  border: 1px solid red !important;
+}
+
 .basic-grey input[type="text"], .basic-grey input[type="email"], .basic-grey textarea, .basic-grey select {
     border: 1px solid #DADADA;
     color: #888;
@@ -43,7 +56,7 @@
     margin-top: 2px;
     outline: 0 none;
     padding: 3px 3px 3px 5px;
-    width: 70%;
+    width: 100%;
     font-size: 12px;
     line-height:15px;
     box-shadow: inset 0px 1px 4px #ECECEC;
@@ -61,7 +74,8 @@
     -moz-appearance: none;
     text-indent: 0.01px;
     text-overflow: '';
-    width: 70%;
+    margin-right: 0 !important;
+    width: calc(100% + 10px);
     height: 35px;
     line-height: 25px;
 }

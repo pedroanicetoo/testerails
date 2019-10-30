@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+   before_filter :set_options_for_selected, :only => [:new,:edit,:create,:update]
   # GET /contacts
   # GET /contacts.json
   def index
@@ -26,7 +27,6 @@ class ContactsController < ApplicationController
   def new
     @contact = Contact.new
     @contact.build_address
-    options_for_selected
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @contact }
@@ -36,7 +36,6 @@ class ContactsController < ApplicationController
   # GET /contacts/1/edit
   def edit
     @contact = Contact.find(params[:id])
-    options_for_selected
   end
 
   # POST /contacts
@@ -83,7 +82,7 @@ class ContactsController < ApplicationController
     end
   end
   private
-    def options_for_selected
+    def set_options_for_selected
       @kind_options_for_select = Kind.all
     end
 end

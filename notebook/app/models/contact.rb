@@ -3,8 +3,17 @@ class Contact < ActiveRecord::Base
   has_one :address
   has_many :phones
 
-  attr_accessible :email, :name, :rmk, :kind, :kind_id, :address_attributes, :phones_attributes
+  attr_accessible :email,
+   :name,
+   :rmk,
+   :kind,
+   :kind_id,
+   :address_attributes,
+   :phones_attributes
 
   accepts_nested_attributes_for :address
   accepts_nested_attributes_for :phones, reject_if: :all_blank, allow_destroy: true
+
+  validates :name, presence: true, length: { minimum: 3 }
+  validates :email, presence: true
 end

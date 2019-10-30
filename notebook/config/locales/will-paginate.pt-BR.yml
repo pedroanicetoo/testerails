@@ -1,0 +1,5 @@
+pt-BR:
+  views:
+    pagination:
+      previous: Anterior
+      next: Próximo

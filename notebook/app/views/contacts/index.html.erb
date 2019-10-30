@@ -23,6 +23,6 @@
   </table>
   <%= link_to "#{t('buttons.new')} #{model_class.model_name.human(count:1)}", new_contact_path %>
   <div style="width:100%;text-align:center">
-    <%= will_paginate (@contacts), :page_links => true, :previous_label => 'Anterior', :next_label => 'Próximo' %>
+    <%= will_paginate (@contacts), :page_links => true, :previous_label => t('views.pagination.previous'), :next_label => t('views.pagination.next'), :inner_window => 1, :outer_window => 0 %>
   </div>
 </div>
