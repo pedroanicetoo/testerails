@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require cocoon
-//= require notifyjs/dist/notify
+//= require notifyjs
+//= require bootstrap
 //= require_tree .
 

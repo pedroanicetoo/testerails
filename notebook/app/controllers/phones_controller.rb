@@ -2,12 +2,10 @@ class PhonesController < ApplicationController
   # GET /phones
   # GET /phones.json
   def index
-    @phones = Phone.all
-
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { @phones = Phone.all }# index.html.erb
       format.json { render json: @phones }
-      format.js {}
+      format.js {  }
     end
   end
 

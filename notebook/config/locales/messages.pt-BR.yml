@@ -3,3 +3,6 @@
     confirm: Você tem certeza?
     listing: Listando
     errors: Erros ocorreram
+    created: Item criado com sucesso!
+    updated: Item editado com sucesso!
+    destroyed: Item apagado com sucesso!
