@@ -1,11 +1,9 @@
-
-
 # ciliatest - project_config
 [Ruby 2.1.6p336](https://ruby-doc.org/core-2.1.6/)
 
 [Rails 3.2.11](https://guides.rubyonrails.org/v3.2.21/)
 
-# Aplicação prática ROR
+# Aplicação prática ROR Aprendizaado da linguagem (25/10/2019)
 
 Links importantes de algumas documentações
 
