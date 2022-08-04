@@ -3,7 +3,7 @@
 
 [Rails 3.2.11](https://guides.rubyonrails.org/v3.2.21/)
 
-# Aplicação prática ROR Aprendizaado da linguagem (25/10/2019)
+# Aplicação prática ROR Aprendizado da linguagem (25/10/2019)
 
 Links importantes de algumas documentações
 
